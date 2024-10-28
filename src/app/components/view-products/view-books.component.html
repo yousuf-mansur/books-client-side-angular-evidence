@@ -1,0 +1,56 @@
+<div class="container mt-4">
+   <div class="row">
+      <div class="col-12">
+         <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+               <tr>
+                  <th>Book Category</th>
+                  <th>Action</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr *ngFor="let item of bookList;  trackByIndex">
+                  <td>
+                     <strong>Category Name: {{item.categoryName}}</strong>
+                     <div *ngIf="item.books.length > 0" class="mt-2">
+                        <table class="table table-sm table-striped">
+                           <thead class="thead-light">
+                              <tr>
+                                 <th>Book Id</th>
+                                 <th>Book Name</th>
+                                 <th>ISBN Number</th>
+                                 <th>Writer</th>
+                                 <th>Standard Cost</th>
+                                 <th>List Price</th>
+                                 <th>Edition</th>
+                                 <th>Pages</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr *ngFor="let p of item.books;  trackByIndex">
+                                 <td>{{p.bookId}}</td>
+                                 <td>{{p.bookName}}</td>
+                                 <td>{{p.isbnNumber}}</td>
+                                 <td>{{p.writer}}</td>
+                                 <td>{{p.standardCost}}</td>
+                                 <td>{{p.listPrice}}</td>
+                                 <td>{{p.edition}}</td>
+                                 <td>{{p.pages}}</td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <div *ngIf="item.books.length === 0" class="text-muted mt-2">
+                        No books available in this category.
+                     </div>
+                  </td>
+                  <td class="align-middle">
+                     <a [routerLink]="['/addBook', 'edit', item.bookCategoryId]" class="btn btn-primary btn-sm">Edit</a>
+                     <button class="btn btn-danger btn-sm" (click)="deleteItem(item)">Delete</button>
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+   </div>
+</div>

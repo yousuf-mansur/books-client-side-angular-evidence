@@ -1,0 +1,126 @@
+<div class="container">
+    <div class="row">
+        <!-- Add New Product Form -->
+        <div class="col-12 mb-4">
+            <div class="card border-secondary shadow-sm">
+                <div class="card-header bg-secondary text-white">
+                    <legend>Add New Book</legend>
+                </div>
+                <div class="card-body bg-light">
+                    <div class="row">
+                        <div class="col-3">
+                            <label for="name" class="form-label">Book Name</label>
+                            <input [(ngModel)]="bookObj.bookName" type="text" id="bookName" name="bookName"
+                                class="form-control" placeholder="Enter Book Name">
+                        </div>
+
+                        <div class="col-3">
+                            <label for="isbnNumber" class="form-label">ISBN Number</label>
+                            <input [(ngModel)]="bookObj.isbnNumber" type="text" id="isbnNumber" name="isbnNumber"
+                                class="form-control" placeholder="Enter ISBN Number">
+                        </div>
+
+                        <div class="col-3">
+                            <label for="writer" class="form-label">Writer Name</label>
+                            <input [(ngModel)]="bookObj.writer" type="text" id="writer" name="writer"
+                                class="form-control" placeholder="Enter writer">
+                        </div>
+
+                        <div class="col-3">
+                            <label for="edition" class="form-label">Edition</label>
+                            <input [(ngModel)]="bookObj.edition" type="number" id="edition" name="edition"
+                                class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col-3">
+                            <label for="standardCost" class="form-label">Standard Cost</label>
+                            <input [(ngModel)]="bookObj.standardCost" type="number" id="standardCost"
+                                name="standardCost" class="form-control">
+                        </div>
+
+                        <div class="col-3">
+                            <label for="listPrice" class="form-label">List Price</label>
+                            <input [(ngModel)]="bookObj.listPrice" type="number" id="listPrice" name="listPrice"
+                                class="form-control">
+                        </div>
+
+                        <div class="col-3">
+                            <label for="pages" class="form-label">Pages</label>
+                            <input [(ngModel)]="bookObj.pages" type="number" id="pages" name="pages"
+                                class="form-control">
+                        </div>
+
+                        <div class="col-3">
+                            <button (click)="addBook()" class="btn btn-primary mt-4 w-100">Add Book</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product List Table -->
+        <div class="col-12" *ngIf="bookList.length > 0">
+            <div class="card border-secondary shadow-sm">
+                <div class="card-header bg-dark text-white">
+                    <legend>Book List</legend>
+                </div>
+                <div class="card-body p-0">
+                    <table class="table table-bordered table-striped table-hover mb-0">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Book Name</th>
+                                <th>ISBN Number</th>
+                                <th>Writer</th>
+                                <th>Standard Cost</th>
+                                <th>List Price</th>
+                                <th>Edition</th>
+                                <th>Pages</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of bookList">
+                                <td>{{ item.bookName }}</td>
+                                <td>{{ item.isbnNumber }}</td>
+                                <td>{{ item.writer }}</td>
+                                <td>{{ item.standardCost }}</td>
+                                <td>{{ item.listPrice }}</td>
+                                <td>{{ item.edition }}</td>
+                                <td>{{ item.pages }}</td>
+                                <td>
+                                    <button (click)="deleteBook(item, bookList)"
+                                        class="btn btn-danger btn-sm">Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Category Form -->
+        <div class="col-12 mt-4">
+            <div class="card border-secondary shadow-sm">
+                <div class="card-header bg-info text-white">
+                    <legend>Book Category</legend>
+                </div>
+                <div class="card-body bg-light">
+                    <div class="row">
+                        <div class="col-9">
+                            <label for="CategoryName" class="form-label">Category Name</label>
+                            <input [(ngModel)]="bookCategory.categoryName" type="text" name="categoryName"
+                                class="form-control">
+                        </div>
+                        <div class="col-3">
+                            <button (click)="addBookCategory()" type="button" class="btn btn-info mt-4 w-100">Add
+                                Book Category</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
