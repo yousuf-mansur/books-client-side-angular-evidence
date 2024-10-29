@@ -45,8 +45,10 @@
                      </div>
                   </td>
                   <td class="align-middle">
-                     <a [routerLink]="['/addBook', 'edit', item.bookCategoryId]" class="btn btn-primary btn-sm">Edit</a>
-                     <button class="btn btn-danger btn-sm" (click)="deleteItem(item)">Delete</button>
+                     <a [routerLink]="['/addBook', 'edit', item.bookCategoryId]"
+                        class="btn btn-outline-primary btn-sm me-1">Edit</a>
+
+                     <button class="btn btn-outline-danger btn-sm" (click)="deleteItem(item)">Delete</button>
                   </td>
                </tr>
             </tbody>

@@ -1,0 +1,146 @@
+/* Global Styles */
+body {
+  background-color: #f5f7fa;
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Card Styles */
+.card {
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.card-header {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.75rem 1.25rem;
+  color: #ffffff;
+}
+
+.card-header.bg-primary {
+  background-color: #4a90e2;
+}
+
+.card-header.bg-secondary {
+  background-color: #7d8ca3;
+}
+
+.card-body {
+  padding: 1.5rem;
+  background-color: #ffffff;
+}
+
+.form-label {
+  font-weight: 500;
+  color: #555;
+}
+
+/* Form Control Styling */
+.form-control {
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-control:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+}
+
+/* Button Styles */
+.btn-primary {
+  background-color: #4a90e2;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.6rem 1.25rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #357abd;
+}
+
+.btn-danger {
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.4rem 0.8rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-danger:hover {
+  background-color: #c0392b;
+}
+
+/* Table Styles */
+.table-hover tbody tr:hover {
+  background-color: #f3f7fb;
+}
+
+.table th,
+.table td {
+  text-align: center;
+  padding: 0.75rem;
+  vertical-align: middle;
+  border-top: none;
+}
+
+.table thead {
+  background-color: #eaeff5;
+}
+
+.table th {
+  font-weight: 600;
+  color: #4a4a4a;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .form-control,
+  .btn {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+
+  .card-header {
+    font-size: 1rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 0 0.5rem;
+  }
+
+  .btn {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .card-body {
+    padding: 1rem;
+  }
+
+  .table th,
+  .table td {
+    font-size: 0.85rem;
+  }
+}
